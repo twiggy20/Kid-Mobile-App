@@ -1,0 +1,99 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+//import 'package:mobile_app/Pages/Reg_FName.dart';
+import 'package:mobile_app/Pages/Reg_FName2.dart';
+import 'package:mobile_app/Pages/Sign_In_2.dart';
+import 'package:mobile_app/utils/size_config.dart';
+
+class Status extends StatefulWidget {
+  static const String id = "status";
+  @override
+  _StatusState createState() => _StatusState();
+}
+
+class _StatusState extends State<Status> {
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    return Scaffold(
+        body: SafeArea(child:
+        Column(
+            children:[
+              Container(
+                  width: SizeConfig.screenWidth,
+                  height: 100,
+                  margin: EdgeInsets.fromLTRB(5.0, 60.0, 10.0, 20.0),
+                  padding: EdgeInsets.fromLTRB(30.0, 0, 10.0, 10.0),
+                  child: Text('Is this your first time?',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Color(0xFF002255),
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold  )),
+                  decoration: BoxDecoration(
+                      //color: Colors.white30,
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10.0),
+                          topLeft: Radius.circular(10.0),
+                          bottomRight: Radius.circular(10.0),
+                          bottomLeft: Radius.circular(10.0)),
+                    )
+                  ),
+              SizedBox(height:70),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context,  Reg_fname2.id);
+                },
+                child:Container(
+                    width: 200,
+                    height: 60,
+                    margin: EdgeInsets.fromLTRB(30.0, 20.0, 20.0, 15.0),
+                    padding: EdgeInsets.fromLTRB(0, 5.0, 10.0, 5.0),
+                    child: Text('Yes',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold  )),
+                    decoration: BoxDecoration(
+                        color: Color(0xFF3EC8AF),
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        border: Border.all(
+                            color: Color(0xFF3EC8AF),
+                            width: 2
+                        ))
+                ),
+              ),
+              SizedBox(height:20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, sign_in_2.id);
+                },
+                child:Container(
+                    width: 200,
+                    height: 60,
+                    margin: EdgeInsets.fromLTRB(30.0, 15.0, 20.0, 50.0),
+                    padding: EdgeInsets.fromLTRB(0, 5.0, 10.0, 5.0),
+                    child: Text('No',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white,
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold  )),
+                    decoration: BoxDecoration(
+                        color: Color(0xFFC8C23E),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(30.0),
+                          bottomLeft: Radius.circular(30.0),
+                          topLeft: Radius.circular(30.0),
+                          bottomRight:  Radius.circular(30.0), ),
+
+                        border: Border.all(
+                            color: Color(0xFFC8C23E),
+                            width: 2
+                        ))
+                ),
+              )
+            ]
+        )
+        )
+    );
+  }
+}
