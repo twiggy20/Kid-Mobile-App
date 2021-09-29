@@ -21,7 +21,6 @@ class _Reg_fname2State extends State<Reg_fname2> {
         body: SafeArea(
             child: Column(
                 children:[
-                  SizedBox(height: 20,),
                   Row(
                     children: [
                       Expanded(
@@ -97,7 +96,7 @@ class _Reg_fname2State extends State<Reg_fname2> {
                            // Navigator.pushNamed(context,Reg_fname2.id);
                           },
                           child:ConstrainedBox(
-                            constraints: BoxConstraints.tightFor(width: 320),
+                            constraints: BoxConstraints.tightFor(width: 280),
                             child: TextFormField(
                               decoration:InputDecoration(
                                 hintText:'Touch here to input your first name',
@@ -122,7 +121,7 @@ class _Reg_fname2State extends State<Reg_fname2> {
                         },
                          child:Container(
                             width: 250,
-                            height: 60,
+                            height: 50,
                             margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
                             padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
                             child:Text('Next',

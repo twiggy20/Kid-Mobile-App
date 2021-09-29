@@ -193,7 +193,7 @@ class _Reg_genderState extends State<Reg_gender> {
                         },
                         child: Container(
                             width: 250,
-                            height: 60,
+                            height: 50,
                             margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
                             padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
                             child:Text('Next',

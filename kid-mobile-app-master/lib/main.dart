@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:mobile_app/Pages/Awards.dart';
 import 'package:mobile_app/Pages/Identity.dart';
 import 'package:mobile_app/Pages/Join_Class_Code.dart';
-import 'package:mobile_app/Pages/Reg_Surname1.dart';
 import 'package:mobile_app/Pages/Status.dart';
 import 'package:mobile_app/Pages/Loading.dart';
 import 'package:mobile_app/Pages/Home.dart';
@@ -61,8 +60,11 @@ class MyApp extends StatelessWidget {
     Reg_fname.id: (context)=>Reg_fname(),
     Reg_fname2.id: (context)=>Reg_fname2(),
     Reg_surname1.id: (context)=>Reg_surname1(),
+    Reg_surname2.id: (context)=>Reg_surname2(),
     Reg_age1.id: (context)=>Reg_age1(),
+    Reg_age2.id: (context)=>Reg_age2(),
     Reg_class1.id: (context)=>Reg_class1(),
+    Reg_class2.id: (context)=>Reg_class2(),
     Reg_gender.id: (context)=>Reg_gender(),
     Registered.id: (context)=>Registered(),
     classroom.id: (context)=>classroom(),

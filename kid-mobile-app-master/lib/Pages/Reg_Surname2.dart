@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/utils/size_config.dart';
+import 'package:mobile_app/Pages/Reg_Age2.dart';
 
 
 // ignore: camel_case_types
@@ -77,6 +78,7 @@ class _Reg_surname2State extends State<Reg_surname2> {
                   ),
                 ],
               ),
+              SizedBox(height: 80,),
       Column(
         children: [
           Text('What is your surname?',
@@ -92,7 +94,7 @@ class _Reg_surname2State extends State<Reg_surname2> {
                 // Navigator.pushNamed(context,Reg_fname2.id);
               },
               child:ConstrainedBox(
-                constraints: BoxConstraints.tightFor(width: 320),
+                constraints: BoxConstraints.tightFor(width: 280),
                 child: TextFormField(
                   decoration:InputDecoration(
                     hintText:'Touch here to input your first name',
@@ -111,8 +113,12 @@ class _Reg_surname2State extends State<Reg_surname2> {
               ),
             ),
           ),
-          Container(
-              width: 200,
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, Reg_age2.id);
+            },
+          child:Container(
+              width: 250,
               height: 50,
               margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
               padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
@@ -130,6 +136,7 @@ class _Reg_surname2State extends State<Reg_surname2> {
                       bottomRight: Radius.circular(30.0),
                       bottomLeft: Radius.circular(30.0)),
                   border: Border.all(color: Colors.black, width: 2)))
+          ),
         ],
       )
     ])));
