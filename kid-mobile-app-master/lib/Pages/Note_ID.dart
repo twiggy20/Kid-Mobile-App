@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Sign_In.dart';
+import 'package:mobile_app/Pages/Sign_In_2.dart';
 import 'package:mobile_app/utils/size_config.dart';
 class Note_ID extends StatefulWidget {
   static const String id = "Note_ID";
@@ -36,7 +36,7 @@ class _Note_IDState extends State<Note_ID> {
                   SizedBox(height: 70),
         InkWell(
             onTap: () {
-              Navigator.pushNamed(context, SignIn.id);
+              Navigator.pushNamed(context, sign_in_2.id);
             },
                  child: Container(
                       width: 250,

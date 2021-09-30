@@ -40,7 +40,7 @@ class _sign_in_2State extends State<sign_in_2> {
                       Navigator.pushNamed(context,home.id);
                     },
                     child:ConstrainedBox(
-                      constraints: BoxConstraints.tightFor(width: 320),
+                      constraints: BoxConstraints.tightFor(width: 280),
                       child: TextFormField(
                         decoration:InputDecoration(
                           hintText:'Touch here to input your  ID',
