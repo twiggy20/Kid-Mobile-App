@@ -33,7 +33,7 @@ class _homeState extends State<home> {
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Color(0xFF303D50),
-              fontSize: 19,
+              fontSize: 20,
               fontWeight: FontWeight.w900
           ),
         ),
@@ -79,7 +79,7 @@ class _homeState extends State<home> {
                       ),
                       SizedBox(height: 10,),
                       Text(
-                        'You have two awards',
+                        'You have no awards',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFF000000),
@@ -92,7 +92,7 @@ class _homeState extends State<home> {
                 ),
               ),
             ),
-            SizedBox(height: 89,),
+            SizedBox(height: 50,),
             Text(
               "Recent classes",
               style: TextStyle(

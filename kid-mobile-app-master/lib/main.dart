@@ -24,6 +24,7 @@ import 'package:mobile_app/Pages/Join_Class.dart';
 import 'package:mobile_app/Pages/Sign_In.dart';
 import 'package:mobile_app/Pages/Sign_In_2.dart';
 import 'package:mobile_app/Pages/Sign_In_Go.dart';
+import 'package:mobile_app/Pages/Note_ID.dart';
 
 import 'Pages/classes/classes.dart';
 //void main()  =>runApp(MaterialApp(
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
     Reg_class2.id: (context)=>Reg_class2(),
     Reg_gender.id: (context)=>Reg_gender(),
     Registered.id: (context)=>Registered(),
+    Note_ID.id: (context)=>Note_ID(),
     classroom.id: (context)=>classroom(),
     classroom_Act.id: (context)=>classroom_Act(),
     join_class_code.id: (context)=>join_class_code(),

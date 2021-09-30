@@ -15,6 +15,8 @@ class Reg_gender extends StatefulWidget {
 }
 
 class _Reg_genderState extends State<Reg_gender> {
+  bool valuefirst = false;
+  bool valuesecond = false;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -96,7 +98,7 @@ class _Reg_genderState extends State<Reg_gender> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 80,),
+                  SizedBox(height: 70,),
                   Column(
                     children: [
                       Text('Are you male or female?',
@@ -106,10 +108,10 @@ class _Reg_genderState extends State<Reg_gender> {
                               fontWeight: FontWeight.bold)
                       ),
                       Container(
-                          width: 260,
+                          width: 250,
                           height: 60,
-                          margin: EdgeInsets.fromLTRB(10, 60, 5, 40),
-                          padding: EdgeInsets.fromLTRB(8, 20, 10, 10),
+                          margin: EdgeInsets.fromLTRB(0, 60, 5, 40),
+                          padding: EdgeInsets.fromLTRB(0, 20, 10, 10),
                           decoration: BoxDecoration(
                               color: Colors.white30,
                               borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -124,33 +126,42 @@ class _Reg_genderState extends State<Reg_gender> {
                                   width: 61,
                                   height: 61,
                                   decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color(0xFFC8C23E),
                                   ),
                                   child: Center(
-                                    child: Image.asset("assets/icons/student.png",width: 28.86,height: 37,fit: BoxFit.contain,),
-                                  ),
+                                     child: Checkbox(
+                                    checkColor: Colors.white,
+                                    activeColor: Colors.greenAccent,
+                                    value: this.valuefirst,
+                                    onChanged: (bool value) {
+                                      setState(() {
+                                        this.valuefirst = value;
+                                      });
+                                    },
+
+                                  ),),
                                 ),
-                                SizedBox(width:28),
+
                                 Text(
                                     'I am a male',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Color(0xFF002255),
-                                      fontSize:24.56,
+                                      fontSize:24,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: "Roboto",
                                     )
                                 ),
+                               // Image.asset("assets/icons/Male.png",width: 28.86,height: 37,fit: BoxFit.contain,),
+
                               ],
                             )
                           )
                       ),
                       Container(
-                          width: 260,
+                          width: 250,
                           height: 60,
                           margin: EdgeInsets.fromLTRB(10, 0, 5, 0),
-                          padding: EdgeInsets.fromLTRB(8, 0, 10, 10),
+                          padding: EdgeInsets.fromLTRB(0,10, 10, 10),
                           decoration: BoxDecoration(
                               color: Colors.white30,
                               borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -165,14 +176,31 @@ class _Reg_genderState extends State<Reg_gender> {
                                     width: 61,
                                     height: 61,
                                     decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color(0xFFC8C23E),
+                                    //  shape: BoxShape.circle,
+                                    //  color: Color(0xFFC8C23E),
                                     ),
                                     child: Center(
-                                      child: Image.asset("assets/icons/student.png",width: 28.86,height: 37,fit: BoxFit.contain,),
-                                    ),
+                                      child: Checkbox(
+                                        checkColor: Colors.white,
+                                        activeColor: Colors.greenAccent,
+                                        value: this.valuefirst,
+                                        onChanged: (bool value) {
+                                          setState(() {
+                                            this.valuefirst = value;
+                                          });
+                                        },
+
+                                      ),
+                                    /*  Checkbox(
+                                      value: this.valuesecond,
+                                      onChanged: (bool value) {
+                                        setState(() {
+                                          this.valuesecond = value;
+                                        });)*/
+
+                                      ),
+
                                   ),
-                                  SizedBox(width:28),
                                   Text(
                                       'I am a female',
                                       textAlign: TextAlign.center,
@@ -194,7 +222,7 @@ class _Reg_genderState extends State<Reg_gender> {
                         child: Container(
                             width: 250,
                             height: 50,
-                            margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
+                            margin: EdgeInsets.fromLTRB(10, 40, 10, 10),
                             padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
                             child:Text('Next',
                                 textAlign: TextAlign.center,

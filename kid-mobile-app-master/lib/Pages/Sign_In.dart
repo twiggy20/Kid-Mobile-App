@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/Pages/Home.dart';
+import 'package:mobile_app/Pages/Reg_FName2.dart';
 import 'package:mobile_app/utils/constant.dart';
 import 'package:mobile_app/utils/size_config.dart';
 import 'package:mobile_app/Pages/Sign_In_2.dart';
@@ -29,13 +31,14 @@ class _SignInState extends State<SignIn> {
       body: SafeArea(
         child: Container(
           width: SizeConfig.screenWidth,
-          padding: EdgeInsets.fromLTRB(50, 50, 10, 10),
+          padding: EdgeInsets.fromLTRB(20, 10, 10, 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 50,),
               Text(
                 'Sign in',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xFF002255),
                   fontSize: 30,
@@ -47,28 +50,28 @@ class _SignInState extends State<SignIn> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(height: 50),
+                      SizedBox(height: 20),
                       _buildSignIn(),
                       SizedBox(height: 23,),
                       InkWell(
                         onTap: (){
-                          Navigator.pushNamed(context,sign_in_2.id );
+                          Navigator.pushNamed(context,home.id );
 
                         },
                         child: Container(
                           padding: EdgeInsets.only(top:9,bottom:9 ),
                           decoration: BoxDecoration(
-                              color: Color(0xFFC8C23E),
+                              color: Colors.black,
                               borderRadius: BorderRadius.all(Radius.circular(36))
                           ),
                           child: Center(
                             child: Text(
-                              "Sign in",
+                              "Continue",
                               style: TextStyle(
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.normal,
                                 fontFamily: 'Roboto',
-                                fontSize:24.56,
-                                color: Color(0xFF121212).withOpacity(0.9),
+                                fontSize:20,
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -76,21 +79,23 @@ class _SignInState extends State<SignIn> {
                       ),
                       SizedBox(height: 30,),
                       InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.pushNamed(context, Reg_fname2.id );
+                        },
                         child: Container(
                           padding: EdgeInsets.only(top:9,bottom:9 ),
                           decoration: BoxDecoration(
-                              color: Color(0xFF121212),
+                              color: Color(0xFF002255),
                               borderRadius: BorderRadius.all(Radius.circular(36))
                           ),
                           child: Center(
                             child: Text(
-                              "Back",
+                              "I don't have ID",
                               style: TextStyle(
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.normal,
                                 fontFamily: 'Roboto',
-                                fontSize: 24.56,
-                                color: Color(0xFFFFFFFF),
+                                fontSize: 20,
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -117,17 +122,7 @@ class _SignInState extends State<SignIn> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "User ID",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto',
-                  fontSize: 21.56,
-                  color: Color(0xFF332D2D),
-                ),
-              ),
-              SizedBox(height: 13,),
+
               Container(
                 width: SizeConfig.screenWidth,
                 child: TextFormField(
@@ -136,7 +131,7 @@ class _SignInState extends State<SignIn> {
                   textInputAction: TextInputAction.next,
                   validator: (value){
                     if(value.isEmpty){
-                      return 'Enter your email address';
+                      return 'Enter your ID';
                     }
                     return null;
                   },
@@ -147,7 +142,7 @@ class _SignInState extends State<SignIn> {
                     color: Color(0xFF332D2D),
                   ),
                   decoration:kFieldDecoration.copyWith(
-                      hintText: 'Input username/email',
+                      hintText: 'Input your ID to continue',
                       hintStyle:TextStyle(
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Roboto',
@@ -159,72 +154,9 @@ class _SignInState extends State<SignIn> {
               ),
             ],
           ),
-          SizedBox(height: 24,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Password",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto',
-                  fontSize: 21.56,
-                  color: Color(0xFF332D2D),
-                ),
-              ),
-              SizedBox(height: 13,),
-              Container(
-                width: SizeConfig.screenWidth,
-                child: TextFormField(
-                  controller: _passwordController,
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  validator: (value){
-                    if(value.isEmpty){
-                      return 'Enter your email address';
-                    }
-                    return null;
-                  },
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Roboto',
-                    fontSize: 21.56,
-                    color: Color(0xFF332D2D),
-                  ),
-                  decoration:kFieldDecoration.copyWith(
-                      hintText: 'Input password here',
-                      hintStyle:TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontFamily: 'Roboto',
-                        fontSize: 21.56,
-                        color: Color(0xFF989898),
-                      )
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 5,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
-                onPressed:(){},
-                child: Text(
-                  "Forgot Password?",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Roboto',
-                    //decoration: TextDecoration.underline,
-                    fontSize: 18,
-                    color: Color(0xFF002255),
-                  ),
-                ),
-              )
-            ],
-          )
+
+          SizedBox(height: 70,),
+
         ],
       ),
     );

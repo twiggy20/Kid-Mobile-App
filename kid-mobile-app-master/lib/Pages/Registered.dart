@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Join_Class.dart';
+import 'package:mobile_app/Pages/Note_ID.dart';
 
 class Registered extends StatefulWidget {
   static const String id = "register";
@@ -13,6 +13,7 @@ class _RegisteredState extends State<Registered> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body:SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +35,7 @@ class _RegisteredState extends State<Registered> {
                 ),
                 InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, join_class.id );
+                    Navigator.pushNamed(context, Note_ID.id );
                   },
                   child: Container(
                       width: 250,
