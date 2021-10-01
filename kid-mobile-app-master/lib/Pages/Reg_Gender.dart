@@ -108,7 +108,7 @@ class _Reg_genderState extends State<Reg_gender> {
                               fontWeight: FontWeight.bold)
                       ),
                       Container(
-                          width: 250,
+                          width: 270,
                           height: 60,
                           margin: EdgeInsets.fromLTRB(0, 60, 5, 40),
                           padding: EdgeInsets.fromLTRB(0, 20, 10, 10),
@@ -135,6 +135,7 @@ class _Reg_genderState extends State<Reg_gender> {
                                     onChanged: (bool value) {
                                       setState(() {
                                         this.valuefirst = value;
+                                        this.valuesecond = false;
                                       });
                                     },
 
@@ -151,17 +152,17 @@ class _Reg_genderState extends State<Reg_gender> {
                                       fontFamily: "Roboto",
                                     )
                                 ),
-                               // Image.asset("assets/icons/Male.png",width: 28.86,height: 37,fit: BoxFit.contain,),
+                               Image.asset("assets/icons/Male_asset.png",width: 28.86,height: 37,fit: BoxFit.contain,),
 
                               ],
                             )
                           )
                       ),
                       Container(
-                          width: 250,
+                          width: 270,
                           height: 60,
-                          margin: EdgeInsets.fromLTRB(10, 0, 5, 0),
-                          padding: EdgeInsets.fromLTRB(0,10, 10, 10),
+                          margin: EdgeInsets.fromLTRB(0, 0, 5, 10),
+                          padding: EdgeInsets.fromLTRB(0, 20, 10, 10),
                           decoration: BoxDecoration(
                               color: Colors.white30,
                               borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -176,45 +177,39 @@ class _Reg_genderState extends State<Reg_gender> {
                                     width: 61,
                                     height: 61,
                                     decoration: BoxDecoration(
-                                    //  shape: BoxShape.circle,
-                                    //  color: Color(0xFFC8C23E),
                                     ),
                                     child: Center(
                                       child: Checkbox(
                                         checkColor: Colors.white,
                                         activeColor: Colors.greenAccent,
-                                        value: this.valuefirst,
+                                        value: this.valuesecond,
                                         onChanged: (bool value) {
                                           setState(() {
-                                            this.valuefirst = value;
+                                            this.valuesecond = value;
+                                            this.valuefirst = false;
                                           });
                                         },
 
-                                      ),
-                                    /*  Checkbox(
-                                      value: this.valuesecond,
-                                      onChanged: (bool value) {
-                                        setState(() {
-                                          this.valuesecond = value;
-                                        });)*/
-
-                                      ),
-
+                                      ),),
                                   ),
+
                                   Text(
                                       'I am a female',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Color(0xFF002255),
-                                        fontSize:24.56,
+                                        fontSize:24,
                                         fontWeight: FontWeight.w400,
                                         fontFamily: "Roboto",
                                       )
                                   ),
+                                  Image.asset("assets/icons/Female_asset.png",width: 28.86,height: 37,fit: BoxFit.contain,),
+
                                 ],
                               )
                           )
                       ),
+                      SizedBox(width: 50),
                       InkWell(
                         onTap: (){
                           Navigator.pushNamed(context, Registered.id);
@@ -226,18 +221,18 @@ class _Reg_genderState extends State<Reg_gender> {
                             padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
                             child:Text('Next',
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white30,
+                                style: TextStyle(color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.normal  )),
                             decoration: BoxDecoration(
-                                color: Colors.grey[400],
+                                color: Colors.black,
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(30.0),
                                     topLeft: Radius.circular(30.0),
                                     bottomRight: Radius.circular(30.0),
                                     bottomLeft: Radius.circular(30.0)),
                                 border: Border.all(
-                                    color: Colors.grey[400],
+                                    color: Colors.black,
                                     width: 2
                                 ))
                         ),

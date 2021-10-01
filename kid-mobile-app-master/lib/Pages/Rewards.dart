@@ -27,7 +27,7 @@ class _AwardsState extends State<Awards> {
           ),
         ),
         title:Text(
-            'Awards',
+            'Rewards',
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Color(0xFF303D50),
@@ -59,7 +59,7 @@ class _AwardsState extends State<Awards> {
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Color(0xFF2B3A2C),
-                    fontSize: 15,
+                    fontSize: 20,
                     fontWeight: FontWeight.w400
                 ),
               ),

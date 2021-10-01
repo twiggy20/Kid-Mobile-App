@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mobile_app/Pages/Awards.dart';
+import 'package:mobile_app/Pages/Rewards.dart';
 import 'package:mobile_app/Pages/Identity.dart';
-import 'package:mobile_app/Pages/Join_Class_Code.dart';
+import 'package:mobile_app/Pages/Join_Class_ID.dart';
 import 'package:mobile_app/Pages/Status.dart';
 import 'package:mobile_app/Pages/Loading.dart';
 import 'package:mobile_app/Pages/Home.dart';
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
     Note_ID.id: (context)=>Note_ID(),
     classroom.id: (context)=>classroom(),
     classroom_Act.id: (context)=>classroom_Act(),
-    join_class_code.id: (context)=>join_class_code(),
+    join_class_ID.id: (context)=>join_class_ID(),
     join_class.id: (context)=>join_class(),
     SignIn.id: (context)=>SignIn(),
     sign_in_2.id: (context)=>sign_in_2(),

@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/Pages/classes/Classroom_Lesson.dart';
+import 'package:mobile_app/Pages/Rewards.dart';
+import 'package:mobile_app/Pages/Join_Class_ID.dart';
+import 'package:mobile_app/Pages/classes/Classroom_Activity.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mobile_app/utils/size_config.dart';
@@ -55,21 +59,25 @@ class _homeState extends State<home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20,),
-            Padding(
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context,   Awards.id);
+          },
+            child:Padding(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Container(
                 decoration: BoxDecoration(
                     color: Color(0xFFF2C94C),
                     borderRadius: BorderRadius.all(Radius.circular(5))
                 ),
-                padding:EdgeInsets.only(top: 19,bottom: 19) ,
+                padding:EdgeInsets.only(top: 10,bottom: 10) ,
                 width: SizeConfig.screenWidth,
                 child: Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Check for awards here',
+                        'Check for rewards here',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFFFFFFFF),
@@ -78,13 +86,14 @@ class _homeState extends State<home> {
                         ),
                       ),
                       SizedBox(height: 10,),
-                      Text(
-                        'You have no awards',
+
+                    Text(
+                        'You have no rewards',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFF000000),
-                            fontSize: 12.76,
-                            fontWeight: FontWeight.w500
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal
                         ),
                       ),
                     ],
@@ -92,7 +101,8 @@ class _homeState extends State<home> {
                 ),
               ),
             ),
-            SizedBox(height: 50,),
+        ),
+            SizedBox(height: 30,),
             Text(
               "Recent classes",
               style: TextStyle(
@@ -102,10 +112,14 @@ class _homeState extends State<home> {
               ),
             ),
             SizedBox(height: 3,),
-            Padding(
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, classroom.id);
+          },
+           child: Padding(
               padding: EdgeInsets.only(left: 10,right: 10),
               child: Container(
-                padding:EdgeInsets.only(top: 19,bottom: 19) ,
+                padding:EdgeInsets.only(top: 10,bottom: 10) ,
                 width: SizeConfig.screenWidth,
                 decoration: BoxDecoration(
                     color: Color(0xFF27AE60),
@@ -146,6 +160,48 @@ class _homeState extends State<home> {
                   ),
                 ),
               ),
+            ),),
+            SizedBox(height: 7,),
+            InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, join_class_ID.id);
+              },
+
+            child:Padding(
+              padding: EdgeInsets.only(left: 10,right: 10),
+              child: Container(
+                padding:EdgeInsets.only(top: 10,bottom: 10) ,
+                width: SizeConfig.screenWidth,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)
+                    ),
+                    border: Border.all(
+                        color: Colors.grey,
+                        width: 2
+                    )),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(width: 30,),
+                      Image.asset("assets/icons/add_new.png",fit: BoxFit.contain,width:34.64,height:39.87,),
+                      SizedBox(width: 30,),
+                          Text(
+                            'Add new class',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal
+                            ),
+                          ),
+
+                    ],
+                  ),
+                ),
+              ),
+            ),
             ),
             SizedBox(height: 36,),
             Text(

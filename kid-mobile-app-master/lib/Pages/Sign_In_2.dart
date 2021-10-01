@@ -49,7 +49,7 @@ class _sign_in_2State extends State<sign_in_2> {
                           fillColor:  Colors.grey[100],
                           // filled: true,
                           enabledBorder:OutlineInputBorder(
-                              borderSide:BorderSide(color:Colors.grey, width:2)
+                              borderSide:BorderSide(color:Colors.grey, )
                           ),
                           focusedBorder:OutlineInputBorder(
                               borderSide:BorderSide(color:Colors.black, width:2)
@@ -59,6 +59,7 @@ class _sign_in_2State extends State<sign_in_2> {
                     ),
                   ),
                 ),
+                SizedBox(height:80),
             InkWell(
               onTap: () {
                 Navigator.pushNamed(context, home.id);

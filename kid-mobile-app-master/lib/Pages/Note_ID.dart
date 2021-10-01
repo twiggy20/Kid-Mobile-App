@@ -49,11 +49,11 @@ class _Note_IDState extends State<Note_ID> {
                               fontSize: 20,
                               fontWeight: FontWeight.normal  )),
                       decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: Colors.black,
                           borderRadius: BorderRadius.all(
                               Radius.circular(20)),
                           border: Border.all(
-                              color: Colors.grey,
+                              color: Colors.black,
                               width: 2
                           ))
                   ),
