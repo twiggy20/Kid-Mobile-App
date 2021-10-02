@@ -34,7 +34,7 @@ class _join_class_IDState extends State<join_class_ID> {
               ),
             ),
         ),
-      SizedBox(width: 2,),
+     // SizedBox(width: 2,),
       Expanded(
         child: Container(
           width: SizeConfig.screenWidth,
@@ -102,7 +102,7 @@ class _join_class_IDState extends State<join_class_ID> {
                               fontSize: 20,
                               fontWeight: FontWeight.normal  )),
                       decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: Colors.black,
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(30.0),
                               topLeft: Radius.circular(30.0),
@@ -113,7 +113,11 @@ class _join_class_IDState extends State<join_class_ID> {
                               width: 2
                           ))
                   ),),
-                  Container(
+                 /* InkWell(
+                  onTap: (){
+                 // Navigator.pushNamed(context,home.id);
+                  },
+                child:  Container(
                       width: 250,
                       height: 50,
                       margin: EdgeInsets.fromLTRB(10, 50, 10, 10),
@@ -124,18 +128,14 @@ class _join_class_IDState extends State<join_class_ID> {
                               fontSize: 20,
                               fontWeight: FontWeight.normal  )),
                       decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(30.0),
-                              topLeft: Radius.circular(30.0),
-                              bottomRight: Radius.circular(30.0),
-                              bottomLeft: Radius.circular(30.0)),
+                          color:Color(0xFF002255),
+                          borderRadius: BorderRadius.all(Radius.circular(30.0)),
                           border: Border.all(
-                              color: Colors.grey,
+                              color: Color(0xFF002255),
                               width: 2
                           ))
                   ),
-
+                  ),*/
                 ]
             )
         )

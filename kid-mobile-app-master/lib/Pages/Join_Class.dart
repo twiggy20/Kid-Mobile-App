@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/Pages/Join_ClassName.dart';
-import 'package:mobile_app/Pages/classes/Classroom_Lesson.dart';
+import 'package:mobile_app/Pages/classes/classes.dart';
 import 'package:mobile_app/utils/constant.dart';
 import 'package:mobile_app/utils/size_config.dart';
 
 
 class join_class extends StatefulWidget {
-  static const String id = "join_class";
+  static const String id = "Classes";
   //const join_class({Key? key}) : super(key: key);
 
   @override
@@ -101,7 +101,7 @@ class _join_classState extends State<join_class> {
 
                   InkWell(
                     onTap: (){
-                     Navigator.pushNamed(context, classroom.id);
+                     Navigator.pushNamed(context, Classes.id);
                     },
                     child:Container(
                         width: 250,

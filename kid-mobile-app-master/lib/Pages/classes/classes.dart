@@ -6,7 +6,7 @@ import 'package:mobile_app/utils/size_config.dart';
 
 
 class Classes extends StatefulWidget {
-  static const String id = "classes";
+  static const String id = "Classes";
   @override
   _ClassesState createState() => _ClassesState();
 }
@@ -69,11 +69,11 @@ class _ClassesState extends State<Classes> {
                         SizedBox(height: 5,),
                         isSelectedLesson == true ?
                         Container(
-                          height: 10.06,
+                          height: 8,
                           width: 212.44,
                           color: Color(0xFF27722F),
                         ):Container(
-                          height: 10.06,
+                          height: 8,
                           width: 212.44,
                           color: Color(0xFFE5E5E5),
                         )
@@ -103,11 +103,11 @@ class _ClassesState extends State<Classes> {
                         SizedBox(height: 5,),
                         isSelectedLesson == false ?
                         Container(
-                          height: 10.06,
+                          height: 8,
                           width: 212.44,
                           color: Color(0xFFC8C23E),
                         ):Container(
-                          height: 10.06,
+                          height: 8,
                           width: 212.44,
                           color: Color(0xFFF0F0F0),
                         )
