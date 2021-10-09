@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Status.dart';
+import 'Status.dart';
 //import 'package:mobile_app/Pages/Sign_In.dart';
 //import 'package:mobile_app/Pages/Sign_In_2.dart';
 import 'package:mobile_app/utils/size_config.dart';
 
-import 'Reg_FName.dart';
+import '../Reg_FName.dart';
 
 class Identity extends StatefulWidget {
   static const String id = "identity";

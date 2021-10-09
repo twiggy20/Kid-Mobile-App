@@ -1,22 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/model/student.dart';
 import 'package:mobile_app/utils/size_config.dart';
-import 'package:mobile_app/Pages/Reg_Age2.dart';
+import 'AgeView.dart';
 
 
 // ignore: camel_case_types
-class Reg_surname2 extends StatefulWidget {
+class SurnameView extends StatefulWidget {
   // const Reg_surname2({Key? key}) : super(key: key);
   static const String id = "reg_surname2";
 
   @override
-  _Reg_surname2State createState() => _Reg_surname2State();
+  _SurnameViewState createState() => _SurnameViewState();
 }
 
 // ignore: camel_case_types
-class _Reg_surname2State extends State<Reg_surname2> {
+class _SurnameViewState extends State<SurnameView> {
+
+  final surnameController = TextEditingController();
+  Student _student;
+
   @override
   Widget build(BuildContext context) {
+    _student = ModalRoute.of(context).settings.arguments as Student;
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
@@ -109,13 +115,15 @@ class _Reg_surname2State extends State<Reg_surname2> {
                         borderSide:BorderSide(color:Colors.black, width:2)
                     ),
                   ),
+                  controller: surnameController,
                 ),
               ),
             ),
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, Reg_age2.id);
+              _student.surname = surnameController.text;
+              Navigator.pushNamed(context, AgeView.id, arguments: _student);
             },
           child:Container(
               width: 250,

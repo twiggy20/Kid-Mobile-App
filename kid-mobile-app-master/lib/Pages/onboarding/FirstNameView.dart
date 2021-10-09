@@ -1,19 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Reg_FName2.dart';
-import 'package:mobile_app/Pages/Reg_Surname2.dart';
+import 'SurnameView.dart';
+import 'package:mobile_app/model/student.dart';
 import 'package:mobile_app/utils/size_config.dart';
 // ignore: camel_case_types
-class Reg_fname2 extends StatefulWidget {
+class FirstNameView extends StatefulWidget {
   //const status({Key? key}) : super(key: key);
   static const String id = "reg_file2";
 
   @override
-  _Reg_fname2State createState() => _Reg_fname2State();
+  _FirstNameViewState createState() => _FirstNameViewState();
 }
 
 // ignore: camel_case_types
-class _Reg_fname2State extends State<Reg_fname2> {
+class _FirstNameViewState extends State<FirstNameView> {
+
+  Student newStudent = Student();
+  final firstNameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,13 +115,15 @@ class _Reg_fname2State extends State<Reg_fname2> {
                                    borderSide:BorderSide(color:Colors.black, width:2)
                                ),
                               ),
+                              controller: firstNameController,
                             ),
                           ),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, Reg_surname2.id);
+                          newStudent.firstName = firstNameController.text;
+                  Navigator.pushNamed(context, SurnameView.id, arguments: newStudent);
                         },
                          child:Container(
                             width: 250,

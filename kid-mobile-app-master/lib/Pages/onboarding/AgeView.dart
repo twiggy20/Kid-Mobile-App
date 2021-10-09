@@ -1,26 +1,31 @@
- import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
- import 'package:mobile_app/utils/size_config.dart';
- import 'package:mobile_app/Pages/Reg_Gender.dart';
-// ignore: camel_case_types
-class Reg_class2 extends StatefulWidget {
-  //const Reg_class2({Key? key}) : super(key: key);
-  static const String id = "class2";
+import 'package:mobile_app/model/student.dart';
+import 'package:mobile_app/utils/size_config.dart';
+import 'ClassView.dart';
+
+class AgeView extends StatefulWidget {
+  //const Reg_age2({Key? key}) : super(key: key);
+  static const String id = "reg_age2";
 
   @override
-  _Reg_class2State createState() => _Reg_class2State();
+  _AgeViewState createState() => _AgeViewState();
 }
 
-// ignore: camel_case_types
-class _Reg_class2State extends State<Reg_class2> {
+class _AgeViewState extends State<AgeView> {
+
+  final ageController = TextEditingController();
+  Student _student;
+
   @override
   Widget build(BuildContext context) {
+
+    _student = ModalRoute.of(context).settings.arguments as Student;
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body:
-        SafeArea(child:
-        Column(
-            children:[
+        body: SafeArea(
+            child: Column(children: [
               Row(
                 children: [
                   Expanded(
@@ -62,7 +67,7 @@ class _Reg_class2State extends State<Reg_class2> {
                       width: SizeConfig.screenWidth,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        color: Color(0xFFDADADA),
                       ),
                     ),
                   ),
@@ -78,16 +83,16 @@ class _Reg_class2State extends State<Reg_class2> {
                   ),
                 ],
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 80,),
               Column(
                 children: [
-                  Text('What class are you in?',
+                  Text('How old are you?',
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.indigo.shade900,
+                      style: TextStyle(
+                          color: Colors.indigo.shade900,
                           fontSize: 30,
-                          fontWeight: FontWeight.bold)
-                  ),
-                  SizedBox(height: 70),
+                          fontWeight: FontWeight.bold)),
+                  SizedBox(height:70),
                   SingleChildScrollView(
                     child:InkWell(
                       onTap: (){
@@ -97,7 +102,7 @@ class _Reg_class2State extends State<Reg_class2> {
                         constraints: BoxConstraints.tightFor(width: 280),
                         child: TextFormField(
                           decoration:InputDecoration(
-                            hintText:'Touch here to select your grade',
+                            hintText:'Touch here to select your age',
                             hintStyle: TextStyle(color: Colors.grey,  fontSize: 20,
                                 fontWeight: FontWeight.normal),
                             fillColor:  Colors.grey[100],
@@ -109,43 +114,35 @@ class _Reg_class2State extends State<Reg_class2> {
                                 borderSide:BorderSide(color:Colors.black, width:2)
                             ),
                           ),
+                          controller: ageController,
                         ),
                       ),
                     ),
                   ),
                   InkWell(
-                  onTap: (){
-                  Navigator.pushNamed(context, Reg_gender.id);
-                  },
-                 child: Container(
-                      width: 250,
-                      height: 50,
-                      margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
-                      padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
-                      child:Text('Next',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal  )),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(30.0),
-                              topLeft: Radius.circular(30.0),
-                              bottomRight: Radius.circular(30.0),
-                              bottomLeft: Radius.circular(30.0)),
-                          border: Border.all(
+                      onTap: () {
+                        _student.age = int. parse(ageController.text);
+                        Navigator.pushNamed(context, ClassView.id, arguments: _student);
+                      },
+                      child:Container(
+                          width: 250,
+                          height: 50,
+                          margin: EdgeInsets.fromLTRB(10, 90, 10, 10),
+                          padding: EdgeInsets.fromLTRB(0, 15, 10, 10),
+                          child: Text('Next',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal)),
+                          decoration: BoxDecoration(
                               color: Colors.black,
-                              width: 2
-                          ))
-                  )
+                              borderRadius: BorderRadius.all(Radius.circular(30)
+                                 ),
+                              border: Border.all(color: Colors.black, width: 2)))
                   ),
                 ],
-
               )
-            ]
-        )
-        )
-    );
+            ])));
   }
 }

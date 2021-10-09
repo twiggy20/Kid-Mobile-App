@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Reg_FName2.dart';
+import 'onboarding/FirstNameView.dart';
 import 'package:mobile_app/Pages/Reg_Surname1.dart';
 import 'package:mobile_app/utils/size_config.dart';
 // ignore: camel_case_types
@@ -93,7 +93,7 @@ class _Reg_fname extends State<Reg_fname> {
                        SizedBox(height:70),
                      InkWell(
                          onTap: () {
-                           Navigator.pushNamed(context, Reg_fname2.id);
+                           Navigator.pushNamed(context, FirstNameView.id);
                          },
                       child: Container(
                            width: 320,
@@ -113,7 +113,7 @@ class _Reg_fname extends State<Reg_fname> {
                        ),
                        InkWell(
                          onTap: () {
-                           Navigator.pushNamed(context, Reg_fname2.id);
+                           Navigator.pushNamed(context, FirstNameView.id);
                          },
                          child:Container(
                              width: 250,

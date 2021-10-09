@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:mobile_app/Pages/Reg_FName.dart';
-import 'package:mobile_app/Pages/Reg_FName2.dart';
+import 'FirstNameView.dart';
 import 'package:mobile_app/Pages/Sign_In_2.dart';
 import 'package:mobile_app/utils/size_config.dart';
 
@@ -21,7 +21,7 @@ class _StatusState extends State<Status> {
             children:[
               Container(
                   width: SizeConfig.screenWidth,
-                  height: 100,
+                  height: 130,
                   margin: EdgeInsets.fromLTRB(5.0, 60.0, 10.0, 20.0),
                   padding: EdgeInsets.fromLTRB(30.0, 0, 10.0, 10.0),
                   child: Text('Is this your first time?',
@@ -41,7 +41,7 @@ class _StatusState extends State<Status> {
               SizedBox(height:70),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context,  Reg_fname2.id);
+                  Navigator.pushNamed(context,  FirstNameView.id);
                 },
                 child:Container(
                     width: 200,

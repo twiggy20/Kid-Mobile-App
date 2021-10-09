@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/Registered.dart';
-import 'package:mobile_app/Pages/Reg_Gender.dart';
+import 'onboarding/Registered.dart';
+import 'onboarding/GenderView.dart';
 import 'package:mobile_app/utils/size_config.dart';
 
 class Reg_class1 extends StatefulWidget {
@@ -127,7 +127,7 @@ class _Reg_class1State extends State<Reg_class1> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.pushNamed(context, Reg_gender.id);
+                      Navigator.pushNamed(context, GenderView.id);
                     },
                     child: Container(
                         width: 250,

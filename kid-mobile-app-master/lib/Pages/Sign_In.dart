@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/Pages/Home.dart';
-import 'package:mobile_app/Pages/Reg_FName2.dart';
+import 'onboarding/FirstNameView.dart';
 import 'package:mobile_app/utils/constant.dart';
 import 'package:mobile_app/utils/size_config.dart';
 import 'package:mobile_app/Pages/Sign_In_2.dart';
@@ -80,7 +80,7 @@ class _SignInState extends State<SignIn> {
                       SizedBox(height: 30,),
                       InkWell(
                         onTap: (){
-                          Navigator.pushNamed(context, Reg_fname2.id );
+                          Navigator.pushNamed(context, FirstNameView.id );
                         },
                         child: Container(
                           padding: EdgeInsets.only(top:9,bottom:9 ),
