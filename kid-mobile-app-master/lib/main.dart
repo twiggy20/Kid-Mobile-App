@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
         GenderView.id: (context) => GenderView(),
         Registered.id: (context) => Registered(),
         Note_ID.id: (context) => Note_ID(),
-        classroom.id: (context) => classroom(),
+        // classroom.id: (context) => classroom(),
         classroom_Act.id: (context) => classroom_Act(),
         join_class_ID.id: (context) => join_class_ID(),
         join_class.id: (context) => join_class(),

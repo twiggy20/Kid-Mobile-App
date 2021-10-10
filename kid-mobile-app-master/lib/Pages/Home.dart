@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/Pages/classes/Classroom_Lesson.dart';
+import 'package:mobile_app/Pages/classes/classes.dart';
 import 'package:mobile_app/Pages/Rewards.dart';
 import 'package:mobile_app/Pages/Join_Class_ID.dart';
 import 'package:mobile_app/Pages/classes/Classroom_Activity.dart';
@@ -28,7 +28,7 @@ class _homeState extends State<home> {
           child: FlatButton(
             onPressed: (){},
             child: Container(
-              child: Image.asset("assets/icons/Vector.png",width:10,height:30,fit: BoxFit.contain,),
+            //  child: Image.asset("assets/icons/options.png ",width:36,height:26,fit: BoxFit.contain,),
             ),
           ),
         ),
@@ -68,7 +68,7 @@ class _homeState extends State<home> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Color(0xFFF2C94C),
-                    borderRadius: BorderRadius.all(Radius.circular(5))
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 padding:EdgeInsets.only(top: 10,bottom: 10) ,
                 width: SizeConfig.screenWidth,
@@ -114,7 +114,7 @@ class _homeState extends State<home> {
             SizedBox(height: 3,),
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, classroom.id);
+            Navigator.pushNamed(context, Classes.id);
           },
            child: Padding(
               padding: EdgeInsets.only(left: 10,right: 10),
@@ -123,7 +123,7 @@ class _homeState extends State<home> {
                 width: SizeConfig.screenWidth,
                 decoration: BoxDecoration(
                     color: Color(0xFF27AE60),
-                    borderRadius: BorderRadius.all(Radius.circular(5))
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Center(
                   child: Row(

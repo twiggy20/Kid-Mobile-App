@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class classroom extends StatefulWidget {
+class classroom_lesson extends StatefulWidget {
   static const String id = "class_room";
   @override
-  _classroomState createState() => _classroomState();
+  _classroom_lessonState createState() => _classroom_lessonState();
 }
 
-class _classroomState extends State<classroom> {
+class _classroom_lessonState extends State<classroom_lesson> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
