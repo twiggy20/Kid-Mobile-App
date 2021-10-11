@@ -29,7 +29,6 @@ class _GenderViewState extends State<GenderView> {
   @override
   Widget build(BuildContext context) {
     _student = ModalRoute.of(context).settings.arguments as Student;
-    print('GENDER ${_student.level}');
 
     SizeConfig().init(context);
     return Scaffold(
@@ -211,10 +210,10 @@ class _GenderViewState extends State<GenderView> {
               print(_student.toString());
               dynamic result = await _studentService.addStudent(_student);
               print('result :::: ${result}');
-              /*if(result) {
-                Navigator.pushNamed(context, Registered.id,
-                    arguments: _student);
-              }*/
+              if (result != null) {
+                Navigator.pushNamedAndRemoveUntil(context, Registered.id,
+                    (_) => false);
+              }
             },
             child: Container(
                 width: 250,

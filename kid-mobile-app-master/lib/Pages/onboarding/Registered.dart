@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/Pages/Note_ID.dart';
+import 'package:mobile_app/model/student.dart';
 
 class Registered extends StatefulWidget {
   static const String id = "register";
@@ -10,8 +11,11 @@ class Registered extends StatefulWidget {
 }
 
 class _RegisteredState extends State<Registered> {
+
+
   @override
   Widget build(BuildContext context) {
+
 
     return Scaffold(
       body:SafeArea(

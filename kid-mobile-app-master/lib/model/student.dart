@@ -4,6 +4,7 @@ class Student{
   int age;
   String level;
   String gender;
+  String code;
 
   Student({this.firstName, this.surname, this.age, this.level, this.gender});
 
@@ -14,6 +15,15 @@ class Student{
       'age': age,
       'level': level,
       'gender': gender,
+      'code': code
     };
   }
+
+  Student.fromData(Map<String, dynamic> data)
+      : firstName = data['firstName'],
+        surname = data['surname'],
+        age = data['age'],
+        level = data['level'],
+        code = data['code'],
+        gender = data['gender'];
 }

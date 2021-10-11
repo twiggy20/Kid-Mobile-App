@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/Pages/Home.dart';
+import 'package:mobile_app/locator.dart';
+import 'package:mobile_app/model/student.dart';
+import 'package:mobile_app/services/student_service.dart';
 import 'package:mobile_app/utils/size_config.dart';
 
 // ignore: camel_case_types
-class sign_in_2 extends StatefulWidget {
+class SignIn extends StatefulWidget {
   //const sign_in({Key? key}) : super(key: key);
   static const String id = "signIn2";
 
   @override
-  _sign_in_2State createState() => _sign_in_2State();
+  _SignInState createState() => _SignInState();
 }
 
 // ignore: camel_case_types
-class _sign_in_2State extends State<sign_in_2> {
+class _SignInState extends State<SignIn> {
+
+  final StudentService _studentService = locator<StudentService>();
+  TextEditingController _userIdController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,14 +62,18 @@ class _sign_in_2State extends State<sign_in_2> {
                               borderSide:BorderSide(color:Colors.black, width:2)
                           ),
                         ),
+                        controller: _userIdController,
                       ),
                     ),
                   ),
                 ),
                 SizedBox(height:80),
             InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, home.id);
+              onTap: () async {
+                Student student = await _studentService.getStudent(_userIdController.text);
+                if (student != null) {
+                  Navigator.pushNamedAndRemoveUntil(context, home.id, (_) => false);
+                }
               },
                 child:Container(
                     width: 250,

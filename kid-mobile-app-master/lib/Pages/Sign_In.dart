@@ -3,17 +3,17 @@ import 'package:mobile_app/Pages/Home.dart';
 import 'onboarding/FirstNameView.dart';
 import 'package:mobile_app/utils/constant.dart';
 import 'package:mobile_app/utils/size_config.dart';
-import 'package:mobile_app/Pages/Sign_In_2.dart';
+import 'package:mobile_app/Pages/SignIn.dart';
 
 
-class SignIn extends StatefulWidget {
+class SignIn2 extends StatefulWidget {
   static const String id = "signIn";
 
   @override
-  _SignInState createState() => _SignInState();
+  _SignIn2State createState() => _SignIn2State();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignIn2State extends State<SignIn2> {
 
   /// A [GlobalKey] to hold the form state of my form widget for form validation
   final _formKey = GlobalKey<FormState>();

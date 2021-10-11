@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_app/Pages/Rewards.dart';
+import 'package:mobile_app/dialog_manager.dart';
 import 'package:mobile_app/locator.dart';
+import 'package:mobile_app/services/dialog_service.dart';
 import 'Pages/onboarding/Identity.dart';
 import 'package:mobile_app/Pages/Join_Class_ID.dart';
 import 'Pages/onboarding/Status.dart';
@@ -24,7 +26,7 @@ import 'Pages/onboarding/Registered.dart';
 import 'package:mobile_app/Pages/Join_ClassName.dart';
 import 'package:mobile_app/Pages/Join_Class.dart';
 import 'package:mobile_app/Pages/Sign_In.dart';
-import 'package:mobile_app/Pages/Sign_In_2.dart';
+import 'package:mobile_app/Pages/SignIn.dart';
 import 'package:mobile_app/Pages/Sign_In_Go.dart';
 import 'package:mobile_app/Pages/Note_ID.dart';
 
@@ -52,6 +54,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'kid_app',
+      builder: (context, child) => Navigator(
+        key: locator<DialogService>().dialogNavigationKey,
+        onGenerateRoute: (settings) => MaterialPageRoute(
+            builder: (context) => DialogManager(child: child)),
+      ),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
@@ -78,7 +85,7 @@ class MyApp extends StatelessWidget {
         join_class_ID.id: (context) => join_class_ID(),
         join_class.id: (context) => join_class(),
         SignIn.id: (context) => SignIn(),
-        sign_in_2.id: (context) => sign_in_2(),
+        SignIn.id: (context) => SignIn(),
         sign_in_go.id: (context) => sign_in_go(),
         Awards.id: (context) => Awards(),
         Classes.id: (context) => Classes(),
